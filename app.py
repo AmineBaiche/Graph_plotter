@@ -18,6 +18,8 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY],
                 suppress_callback_exceptions=True)
+server = app.server
+
 url = "https://global-uploads.webflow.com/5dd3495558fd7f3d1fcb52bc/604633601a00eb7361ff6e5e_Growth.json"
 opt = dict(loop=True, autoplay=True, rendererSettings=dict(preserveAspectRatio='xMidYMid slice'))
 app.layout = html.Div([
