@@ -56,7 +56,7 @@ app.layout = html.Div([
     html.Div(id='output-datatable')],className="box-column dropzone")
 ],className='box')
 
-
+server=app.server
 def parse_contents(contents, filename, date):
     content_type, content_string = contents.split(',')
 
