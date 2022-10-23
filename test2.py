@@ -14,10 +14,13 @@ import pandas as pd
 import dash_extensions as de
 
 
+
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY],
                 suppress_callback_exceptions=True)
+server=app.server
+
 url = "https://global-uploads.webflow.com/5dd3495558fd7f3d1fcb52bc/604633601a00eb7361ff6e5e_Growth.json"
 opt = dict(loop=True, autoplay=True, rendererSettings=dict(preserveAspectRatio='xMidYMid slice'))
 app.layout = html.Div([
@@ -56,7 +59,6 @@ app.layout = html.Div([
     html.Div(id='output-datatable')],className="box-column dropzone")
 ],className='box')
 
-server=app.server
 def parse_contents(contents, filename, date):
     content_type, content_string = contents.split(',')
 
