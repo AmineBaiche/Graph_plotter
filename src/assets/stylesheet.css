@@ -1,0 +1,284 @@
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 100%;
+  background: #f5f7fb;
+  color: #2e3438;
+}
+.btn {
+  display: inline-block;
+  background-color: #5978f3;
+  color: white;
+  padding: 12px 24px;
+  font: inherit;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 40px;
+}
+.btn:active,
+.btn:focus {
+    background-color: #4264e8;
+}
+
+.container {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.box {
+    box-shadow: 0 15px 35px 0 rgba(111, 111, 111, 0.12);
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto auto;
+    border-radius: 52px;
+    min-height: 34rem;
+    padding: 34px;
+}
+
+.box-column {
+    flex: 1 1 50%;
+    padding: 0px;
+    min-width: 200px;
+    min-height: 30px;
+}
+
+.centered {
+    text-align: center;
+}
+
+.contact-info {
+    text-align: center;
+    width: 100%;
+    margin-top: 24px;
+}
+
+.dropzone {
+    transform: translateZ(0);
+    /* border: 2px dashed #14e4c5; */
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.dropzone.active {
+    background-color: #8f8a91;
+}
+
+.dropzone.over {
+    border: 2px solid #000;
+    background-color: #8f8a91;
+}
+
+.error {
+    margin-bottom: 6px;
+    font-family: monospace;
+}
+
+.help-text {
+    margin-top: 24px;
+}
+
+.warning-table {
+    display: inline-block;
+    font-family: monospace;
+}
+
+th {
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+.heading {
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 24px;
+}
+
+li {
+    margin-bottom: 24px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.grid-container {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 0.5rem;
+    display: grid;
+    grid-template-rows: repeat(11, auto) minmax(50px, 100px);
+    grid-template-columns: minmax(50px, 200px) minmax(50px, 100px) repeat(9, auto) minmax(50px, 100px);
+    grid-gap: 0.4rem;
+}
+
+.key-list {
+    grid-column: 1 / 2;
+    grid-row: 1 / 13;
+    overflow: auto;
+}
+
+.plot {
+    z-index: 1;
+    overflow: hidden;
+    grid-column: 2 / 13;
+    grid-row: 1 / 13;
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                         supported by Chrome, Opera and Firefox */
+}
+
+.drop-region {
+    border-radius: 0.5rem;
+    background-color: #3f97d6;
+    border: 2px dashed #000;
+    margin: 4px;
+    opacity: 0;
+}
+
+.drop-region.active {
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.drop-region.over {
+    opacity: 1.0;
+    border: 2px solid #000;
+}
+/*  REMOVE ME */
+
+.drop-region.color {
+    background-color: #3ed4c8;
+    grid-column: 12 / 13;
+    grid-row: 1 / 12;
+}
+
+.drop-region.xaxis {
+    grid-column: 3 / 13;
+    grid-row: 12 / 13;
+}
+
+.drop-region.yaxis {
+    grid-column: 2 / 3;
+    grid-row: 1 / 12;
+}
+
+.key {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 0.999;
+    /* For removing white background when dragging a key */
+    border-radius: 25px;
+    background-color: #3f97d6;
+    padding: 5px;
+    margin: 5px auto;
+    width: 80%;
+    text-align: center;
+    cursor: move;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 1rem;
+}
+
+.categorical {
+    background-color: #3ed4c8;
+}
+
+.invisible {
+    border: 2px dashed #000;
+    height: 20%;
+}
+
+.grid-item {
+    background-color: #fff;
+    border-radius: 0.5rem;
+}
+/* Spinner */
+
+.spinner-style {
+    /* //  display: inline-block; */
+    /* position: relative; */
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    -webkit-animation: rotation .8s linear infinite;
+    -moz-animation: rotation .8s linear infinite;
+    -o-animation: rotation .8s linear infinite;
+    animation: rotation 0.8s linear infinite;
+    border-left: 5px solid white;
+    border-right: 5px solid white;
+    border-bottom: 5px solid white;
+    border-top: 5px solid rgb(120, 120, 120);
+    border-radius: 100%;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes rotation {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes rotation {
+    from {
+        -o-transform: rotate(0deg);
+    }
+    to {
+        -o-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.firstdiv {
+  box-sizing: border-box;
+}
