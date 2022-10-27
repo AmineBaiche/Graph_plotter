@@ -15,10 +15,10 @@ import dash_extensions as de
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY],
                 suppress_callback_exceptions=True)
 url = "https://global-uploads.webflow.com/5dd3495558fd7f3d1fcb52bc/604633601a00eb7361ff6e5e_Growth.json"
+server = app.server
 opt = dict(loop=True, autoplay=True, rendererSettings=dict(preserveAspectRatio='xMidYMid slice'))
 app.layout = html.Div([
     html.Div([de.Lottie(options=opt, width="50%", height="10%", url=url)
