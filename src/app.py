@@ -108,15 +108,15 @@ def parse_contents(contents, filename, date):
                      {'label': 'scatter', 'value': "scatter"},
                      {'label': 'Ecdf', 'value': "ecdf"}   
                      ],value="bar"),
-        html.P("Choose Color"),
-        dcc.Dropdown(id='color',
-                     options=[{'label':"Viridis", 'value':"Viridis"},
-                     {'label': 'Line', 'value': "line"},  
-                     {'label': 'Area', 'value': "area"},
-                     {'label': 'Funnel', 'value': "funnel"},
-                     {'label': 'Pie', 'value': "pie"},
-                     {'label': 'Ecdf', 'value': "ecdf"}
-                     ]),
+        # html.P("Choose Color"),
+        # dcc.Dropdown(id='color',
+        #              options=[{'label':"Viridis", 'value':"Viridis"},
+        #              {'label': 'Line', 'value': "line"},  
+        #              {'label': 'Area', 'value': "area"},
+        #              {'label': 'Funnel', 'value': "funnel"},
+        #              {'label': 'Pie', 'value': "pie"},
+        #              {'label': 'Ecdf', 'value': "ecdf"}
+        #              ]),
         dbc.Button(id="submit-button", children="Create Graph",className="mb-3"),
         dcc.Store(id='stored-data', data=df.to_dict('records')),
 
@@ -192,11 +192,9 @@ def update_output(list_of_contents, list_of_names, list_of_dates):
               State('stored-data','data'),
               State('xaxis-data','value'),
               State('yaxis-data', 'value'),
-              State('graph_type','value'),
-              State('color','value'),
-
+              State('graph_type','value')
 )
-def make_graphs(n, data, x_data, y_data,type,color):
+def make_graphs(n, data, x_data, y_data,type):
     
     if n is None:
         return dash.no_update
